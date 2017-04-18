@@ -1,0 +1,1774 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/hapijs/confidence#readme">confidence (v3.0.2)</a>
+</h1>
+<h4>Configuration API</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.confidence">module confidence</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.Store">
+            function <span class="apidocSignatureSpan">confidence.</span>Store
+            <span class="apidocSignatureSpan">(document)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.Store._logApplied">
+            function <span class="apidocSignatureSpan">confidence.</span>Store._logApplied
+            <span class="apidocSignatureSpan">(applied, filter, node, criterion)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.Store.prototype._get">
+            function <span class="apidocSignatureSpan">confidence.</span>Store.prototype._get
+            <span class="apidocSignatureSpan">(key, criteria, applied)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.Store.prototype.get">
+            function <span class="apidocSignatureSpan">confidence.</span>Store.prototype.get
+            <span class="apidocSignatureSpan">(key, criteria, applied)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.Store.prototype.load">
+            function <span class="apidocSignatureSpan">confidence.</span>Store.prototype.load
+            <span class="apidocSignatureSpan">(document)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.Store.prototype.meta">
+            function <span class="apidocSignatureSpan">confidence.</span>Store.prototype.meta
+            <span class="apidocSignatureSpan">(key, criteria)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.Store.validate">
+            function <span class="apidocSignatureSpan">confidence.</span>Store.validate
+            <span class="apidocSignatureSpan">(node, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.id.criteria">
+            function <span class="apidocSignatureSpan">confidence.</span>id.criteria
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.id.generate">
+            function <span class="apidocSignatureSpan">confidence.</span>id.generate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">confidence.</span>Store.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">confidence.</span>id</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.confidence.Store">module confidence.Store</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.Store.Store">
+            function <span class="apidocSignatureSpan">confidence.</span>Store
+            <span class="apidocSignatureSpan">(document)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.Store._logApplied">
+            function <span class="apidocSignatureSpan">confidence.Store.</span>_logApplied
+            <span class="apidocSignatureSpan">(applied, filter, node, criterion)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.Store.validate">
+            function <span class="apidocSignatureSpan">confidence.Store.</span>validate
+            <span class="apidocSignatureSpan">(node, path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.confidence.Store._logApplied">module confidence.Store._logApplied</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.Store._logApplied._logApplied">
+            function <span class="apidocSignatureSpan">confidence.Store.</span>_logApplied
+            <span class="apidocSignatureSpan">(applied, filter, node, criterion)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.confidence.Store.prototype">module confidence.Store.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.Store.prototype._get">
+            function <span class="apidocSignatureSpan">confidence.Store.prototype.</span>_get
+            <span class="apidocSignatureSpan">(key, criteria, applied)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.Store.prototype.get">
+            function <span class="apidocSignatureSpan">confidence.Store.prototype.</span>get
+            <span class="apidocSignatureSpan">(key, criteria, applied)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.Store.prototype.load">
+            function <span class="apidocSignatureSpan">confidence.Store.prototype.</span>load
+            <span class="apidocSignatureSpan">(document)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.Store.prototype.meta">
+            function <span class="apidocSignatureSpan">confidence.Store.prototype.</span>meta
+            <span class="apidocSignatureSpan">(key, criteria)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.confidence.Store.prototype._get">module confidence.Store.prototype._get</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.Store.prototype._get._get">
+            function <span class="apidocSignatureSpan">confidence.Store.prototype.</span>_get
+            <span class="apidocSignatureSpan">(key, criteria, applied)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.confidence.Store.prototype.get">module confidence.Store.prototype.get</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.Store.prototype.get.get">
+            function <span class="apidocSignatureSpan">confidence.Store.prototype.</span>get
+            <span class="apidocSignatureSpan">(key, criteria, applied)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.confidence.Store.prototype.load">module confidence.Store.prototype.load</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.Store.prototype.load.load">
+            function <span class="apidocSignatureSpan">confidence.Store.prototype.</span>load
+            <span class="apidocSignatureSpan">(document)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.confidence.Store.prototype.meta">module confidence.Store.prototype.meta</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.Store.prototype.meta.meta">
+            function <span class="apidocSignatureSpan">confidence.Store.prototype.</span>meta
+            <span class="apidocSignatureSpan">(key, criteria)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.confidence.Store.validate">module confidence.Store.validate</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.Store.validate.validate">
+            function <span class="apidocSignatureSpan">confidence.Store.</span>validate
+            <span class="apidocSignatureSpan">(node, path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.confidence.id">module confidence.id</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.id.criteria">
+            function <span class="apidocSignatureSpan">confidence.id.</span>criteria
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.id.generate">
+            function <span class="apidocSignatureSpan">confidence.id.</span>generate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.confidence.id.criteria">module confidence.id.criteria</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.id.criteria.criteria">
+            function <span class="apidocSignatureSpan">confidence.id.</span>criteria
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.confidence.id.generate">module confidence.id.generate</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.confidence.id.generate.generate">
+            function <span class="apidocSignatureSpan">confidence.id.</span>generate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.confidence" id="apidoc.module.confidence">module confidence</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.Store" id="apidoc.element.confidence.Store">
+        function <span class="apidocSignatureSpan">confidence.</span>Store
+        <span class="apidocSignatureSpan">(document)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Store = function (document) {
+
+    this.load(document || {});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+- `document` - an optional object containing a **confidence** configuration object generated from a parsed JSON document.
+  If the document is invalid, will throw an error. Defaults to `{}`.
+
+```javascript
+var Confidence = require('confidence');
+
+var store = new Confidence.<span class="apidocCodeKeywordSpan">Store</span>();
+```
+
+### store.load(document)
+
+Validates the provided configuration, clears any existing configuration, then loads the configuration where:
+
+- `document` - an object containing a **confidence** configuration object generated from a parsed JSON document.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.Store._logApplied" id="apidoc.element.confidence.Store._logApplied">
+        function <span class="apidocSignatureSpan">confidence.</span>Store._logApplied
+        <span class="apidocSignatureSpan">(applied, filter, node, criterion)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Store._logApplied = function (applied, filter, node, criterion) {
+
+    if (!applied) {
+        return;
+    }
+
+    const record = {
+        filter: filter
+    };
+
+    if (criterion) {
+        if (typeof criterion === 'object') {
+            if (criterion.id) {
+                record.valueId = criterion.id;
+            }
+            else {
+                record.valueId = (typeof criterion.value === 'object' ? '[object]' : criterion.value.toString());
+            }
+        }
+        else {
+            record.valueId = criterion.toString();
+        }
+    }
+
+    if (node &amp;&amp; node.$id) {
+        record.filterId = node.$id;
+    }
+
+    applied.push(record);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.Store.prototype._get" id="apidoc.element.confidence.Store.prototype._get">
+        function <span class="apidocSignatureSpan">confidence.</span>Store.prototype._get
+        <span class="apidocSignatureSpan">(key, criteria, applied)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Store.prototype._get = function (key, criteria, applied) {
+
+    const self = this;
+
+    criteria = criteria || {};
+
+    const path = [];
+    if (key !== '/') {
+        const invalid = key.replace(/\/(\w+)/g, ($0, $1) =&gt; {
+
+            path.push($1);
+            return '';
+        });
+
+        if (invalid) {
+            return undefined;
+        }
+    }
+
+    let node = internals.filter(self._tree, criteria, applied);
+    for (let i = 0; i &lt; path.length &amp;&amp; node; ++i) {
+        if (typeof node !== 'object') {
+            node = undefined;
+            break;
+        }
+
+        node = internals.filter(node[path[i]], criteria, applied);
+    }
+
+    return node;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.Store.prototype.get" id="apidoc.element.confidence.Store.prototype.get">
+        function <span class="apidocSignatureSpan">confidence.</span>Store.prototype.get
+        <span class="apidocSignatureSpan">(key, criteria, applied)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Store.prototype.get = function (key, criteria, applied) {
+
+    const node = this._get(key, criteria, applied);
+    return internals.walk(node, criteria, applied);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.Store.prototype.load" id="apidoc.element.confidence.Store.prototype.load">
+        function <span class="apidocSignatureSpan">confidence.</span>Store.prototype.load
+        <span class="apidocSignatureSpan">(document)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Store.prototype.load = function (document) {
+
+    const err = internals.Store.validate(document);
+    Hoek.assert(!err, err);
+
+    this._tree = Hoek.clone(document);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.Store.prototype.meta" id="apidoc.element.confidence.Store.prototype.meta">
+        function <span class="apidocSignatureSpan">confidence.</span>Store.prototype.meta
+        <span class="apidocSignatureSpan">(key, criteria)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Store.prototype.meta = function (key, criteria) {
+
+    const node = this._get(key, criteria);
+    return (typeof node === 'object' ? node.$meta : undefined);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.Store.validate" id="apidoc.element.confidence.Store.validate">
+        function <span class="apidocSignatureSpan">confidence.</span>Store.validate
+        <span class="apidocSignatureSpan">(node, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Store.validate = function (node, path) {
+
+    path = path || '';
+
+    const error = function (reason) {
+
+        const e = Boom.badRequest(reason);
+        e.path = path || '/';
+        return e;
+    };
+
+    // Valid value
+
+    if (node === null ||
+        node === undefined ||
+        typeof node !== 'object') {
+        return null;
+    }
+
+    // Invalid object
+
+    if (node instanceof Error ||
+        node instanceof Date ||
+        node instanceof RegExp) {
+
+        return error('Invalid node object type');
+    }
+
+    // Invalid keys
+
+    const found = {};
+    const keys = Object.keys(node);
+    for (let i = 0; i &lt; keys.length; ++i) {
+        const key = keys[i];
+        if (key[0] === '$') {
+            if (key === '$filter') {
+                found.filter = true;
+                const filter = node[key];
+                if (!filter) {
+                    return error('Invalid empty filter value');
+                }
+
+                if (typeof filter !== 'string') {
+                    return error('Filter value must be a string');
+                }
+
+                if (!filter.match(/^\w+(?:\.\w+)*$/)) {
+                    return error('Invalid filter value ' + node[key]);
+                }
+            }
+            else if (key === '$range') {
+                found.range = true;
+                if (node.$range instanceof Array === false) {
+                    return error('Range value must be an array');
+                }
+
+                if (!node.$range.length) {
+                    return error('Range must include at least one value');
+                }
+
+                let lastLimit = undefined;
+                for (let j = 0; j &lt; node.$range.length; ++j) {
+                    const range = node.$range[j];
+                    if (typeof range !== 'object') {
+                        return error('Invalid range entry type');
+                    }
+
+                    if (!Object.prototype.hasOwnProperty.call(range, 'limit')) {
+                        return error('Range entry missing limit');
+                    }
+
+                    if (typeof range.limit !== 'number') {
+                        return error('Range limit must be a number');
+                    }
+
+                    if (lastLimit !== undefined &amp;&amp; range.limit &lt;= lastLimit) {
+                        return error('Range entries not sorted in ascending order - ' + range.limit + ' cannot come after ' + lastLimit
+);
+                    }
+
+                    lastLimit = range.limit;
+
+                    if (!Object.prototype.hasOwnProperty.call(range, 'value')) {
+                        return error('Range entry missing value');
+                    }
+
+                    const err = internals.Store.validate(range.value, path + '/$range[' + range.limit + ']');
+                    if (err) {
+                        return err;
+                    }
+                }
+            }
+            else if (key === '$default') {
+                found.default = true;
+                const err2 = internals.Store.validate(node.$default, path + '/$default');
+                if (err2) {
+                    return err2;
+                }
+            }
+            else if (key === '$base') {
+                found.base = true;
+            }
+            else if (key === '$meta') {
+                found.meta = true;
+            }
+            else if (key === '$id') {
+                if (!node.$id ||
+                    typeof node.$id !== 'string') {
+
+                    return error('Id value must be a non-empty string');
+                }
+
+                found.id = true;
+            }
+            else if (key === '$value') {
+                found.value = true;
+                const err3 = internals.Store.validate(node.$value, path + '/$value');
+                if (err3) {
+                    return err3;
+                }
+            }
+            else {
+                return error('Unknown $ directive ' + key);
+            }
+        }
+        else {
+            found.key = true;
+            const value = node[key];
+            const err4 = internals.Store.validate(value, path + '/ ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.id.criteria" id="apidoc.element.confidence.id.criteria">
+        function <span class="apidocSignatureSpan">confidence.</span>id.criteria
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">id.criteria = function (id) {
+
+    if (!id.match(/^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$/)) {
+        return null;
+    }
+
+    const parse = function (from, to) {
+
+        const hex = id.slice(from, to);
+        const value = parseInt(hex, 16);
+
+        if (value &gt;= 10000000) {
+            return null;
+        }
+
+        const set = value.toString().split('');
+        for (let i = 0; i &lt; set.length; ++i) {
+            set[i] = parseInt(set[i], 10);
+        }
+
+        for (let i = 0; i &lt; 7 - set.length; ++i) {
+            set.unshift(0);
+        }
+
+        return set;
+    };
+
+    const set1 = parse(24, 30);
+    const set2 = parse(30);
+
+    if (set1 === null ||
+        set2 === null) {
+
+        return null;
+    }
+
+    const criteria = {
+        $id: id,
+        random: {
+            a: (set1[0] * 10) + set1[1] + 1,
+            b: (set1[1] * 10) + set1[2] + 1,
+            c: (set1[2] * 10) + set1[3] + 1,
+            d: (set1[3] * 10) + set1[4] + 1,
+            e: (set1[4] * 10) + set1[5] + 1,
+            f: (set1[5] * 10) + set1[6] + 1,
+            g: (set1[6] * 10) + set2[0] + 1,
+            h: (set2[0] * 10) + set2[1] + 1,
+            i: (set2[1] * 10) + set2[2] + 1,
+            j: (set2[2] * 10) + set2[3] + 1,
+            k: (set2[3] * 10) + set2[4] + 1,
+            l: (set2[4] * 10) + set2[5] + 1,
+            m: (set2[5] * 10) + set2[6] + 1,
+            n: (set2[6] * 10) + set1[0] + 1
+        }
+    };
+
+    return criteria;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.id.generate" id="apidoc.element.confidence.id.generate">
+        function <span class="apidocSignatureSpan">confidence.</span>id.generate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">id.generate = function () {
+
+    let rand = Crypto.randomBytes(10);
+
+    rand[6] = (rand[6] &amp; 0x0f) | 0x40;        // Per RFC 4122 (4.4) - set bits for version and `clock_seq_hi_and_reserved`
+    rand[8] = (rand[8] &amp; 0x3f) | 0x80;
+
+    const b = internals.byteToHex;
+    let id = b[rand[0]] + b[rand[1]] + b[rand[2]] + b[rand[3]] + '-' +
+            b[rand[4]] + b[rand[5]] + '-' +
+            b[rand[6]] + b[rand[7]] + '-' +
+            b[rand[8]] + b[rand[9]] + '-';
+
+    const distributedRandom3B = function () {
+
+        let bytes = '';
+
+        while (!bytes) {                            // This can theoretically loop forever if the machine random device generates
+ garbage
+            rand = Crypto.randomBytes(3);
+            const value = (rand[0] &lt;&lt; 16) | (rand[1] &lt;&lt; 8) | rand[2];
+            if (value &gt;= 10000000) {
+                continue;
+            }
+
+            bytes = internals.byteToHex[rand[0]] + internals.byteToHex[rand[1]] + internals.byteToHex[rand[2]];
+        }
+
+        return bytes;
+    };
+
+    id += distributedRandom3B();
+    id += distributedRandom3B();
+
+    return id;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.confidence.Store" id="apidoc.module.confidence.Store">module confidence.Store</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.Store.Store" id="apidoc.element.confidence.Store.Store">
+        function <span class="apidocSignatureSpan">confidence.</span>Store
+        <span class="apidocSignatureSpan">(document)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Store = function (document) {
+
+    this.load(document || {});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+- `document` - an optional object containing a **confidence** configuration object generated from a parsed JSON document.
+  If the document is invalid, will throw an error. Defaults to `{}`.
+
+```javascript
+var Confidence = require('confidence');
+
+var store = new Confidence.<span class="apidocCodeKeywordSpan">Store</span>();
+```
+
+### store.load(document)
+
+Validates the provided configuration, clears any existing configuration, then loads the configuration where:
+
+- `document` - an object containing a **confidence** configuration object generated from a parsed JSON document.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.Store._logApplied" id="apidoc.element.confidence.Store._logApplied">
+        function <span class="apidocSignatureSpan">confidence.Store.</span>_logApplied
+        <span class="apidocSignatureSpan">(applied, filter, node, criterion)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_logApplied = function (applied, filter, node, criterion) {
+
+    if (!applied) {
+        return;
+    }
+
+    const record = {
+        filter: filter
+    };
+
+    if (criterion) {
+        if (typeof criterion === 'object') {
+            if (criterion.id) {
+                record.valueId = criterion.id;
+            }
+            else {
+                record.valueId = (typeof criterion.value === 'object' ? '[object]' : criterion.value.toString());
+            }
+        }
+        else {
+            record.valueId = criterion.toString();
+        }
+    }
+
+    if (node &amp;&amp; node.$id) {
+        record.filterId = node.$id;
+    }
+
+    applied.push(record);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.Store.validate" id="apidoc.element.confidence.Store.validate">
+        function <span class="apidocSignatureSpan">confidence.Store.</span>validate
+        <span class="apidocSignatureSpan">(node, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validate = function (node, path) {
+
+    path = path || '';
+
+    const error = function (reason) {
+
+        const e = Boom.badRequest(reason);
+        e.path = path || '/';
+        return e;
+    };
+
+    // Valid value
+
+    if (node === null ||
+        node === undefined ||
+        typeof node !== 'object') {
+        return null;
+    }
+
+    // Invalid object
+
+    if (node instanceof Error ||
+        node instanceof Date ||
+        node instanceof RegExp) {
+
+        return error('Invalid node object type');
+    }
+
+    // Invalid keys
+
+    const found = {};
+    const keys = Object.keys(node);
+    for (let i = 0; i &lt; keys.length; ++i) {
+        const key = keys[i];
+        if (key[0] === '$') {
+            if (key === '$filter') {
+                found.filter = true;
+                const filter = node[key];
+                if (!filter) {
+                    return error('Invalid empty filter value');
+                }
+
+                if (typeof filter !== 'string') {
+                    return error('Filter value must be a string');
+                }
+
+                if (!filter.match(/^\w+(?:\.\w+)*$/)) {
+                    return error('Invalid filter value ' + node[key]);
+                }
+            }
+            else if (key === '$range') {
+                found.range = true;
+                if (node.$range instanceof Array === false) {
+                    return error('Range value must be an array');
+                }
+
+                if (!node.$range.length) {
+                    return error('Range must include at least one value');
+                }
+
+                let lastLimit = undefined;
+                for (let j = 0; j &lt; node.$range.length; ++j) {
+                    const range = node.$range[j];
+                    if (typeof range !== 'object') {
+                        return error('Invalid range entry type');
+                    }
+
+                    if (!Object.prototype.hasOwnProperty.call(range, 'limit')) {
+                        return error('Range entry missing limit');
+                    }
+
+                    if (typeof range.limit !== 'number') {
+                        return error('Range limit must be a number');
+                    }
+
+                    if (lastLimit !== undefined &amp;&amp; range.limit &lt;= lastLimit) {
+                        return error('Range entries not sorted in ascending order - ' + range.limit + ' cannot come after ' + lastLimit
+);
+                    }
+
+                    lastLimit = range.limit;
+
+                    if (!Object.prototype.hasOwnProperty.call(range, 'value')) {
+                        return error('Range entry missing value');
+                    }
+
+                    const err = internals.Store.validate(range.value, path + '/$range[' + range.limit + ']');
+                    if (err) {
+                        return err;
+                    }
+                }
+            }
+            else if (key === '$default') {
+                found.default = true;
+                const err2 = internals.Store.validate(node.$default, path + '/$default');
+                if (err2) {
+                    return err2;
+                }
+            }
+            else if (key === '$base') {
+                found.base = true;
+            }
+            else if (key === '$meta') {
+                found.meta = true;
+            }
+            else if (key === '$id') {
+                if (!node.$id ||
+                    typeof node.$id !== 'string') {
+
+                    return error('Id value must be a non-empty string');
+                }
+
+                found.id = true;
+            }
+            else if (key === '$value') {
+                found.value = true;
+                const err3 = internals.Store.validate(node.$value, path + '/$value');
+                if (err3) {
+                    return err3;
+                }
+            }
+            else {
+                return error('Unknown $ directive ' + key);
+            }
+        }
+        else {
+            found.key = true;
+            const value = node[key];
+            const err4 = internals.Store.validate(value, path + '/ ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.confidence.Store._logApplied" id="apidoc.module.confidence.Store._logApplied">module confidence.Store._logApplied</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.Store._logApplied._logApplied" id="apidoc.element.confidence.Store._logApplied._logApplied">
+        function <span class="apidocSignatureSpan">confidence.Store.</span>_logApplied
+        <span class="apidocSignatureSpan">(applied, filter, node, criterion)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_logApplied = function (applied, filter, node, criterion) {
+
+    if (!applied) {
+        return;
+    }
+
+    const record = {
+        filter: filter
+    };
+
+    if (criterion) {
+        if (typeof criterion === 'object') {
+            if (criterion.id) {
+                record.valueId = criterion.id;
+            }
+            else {
+                record.valueId = (typeof criterion.value === 'object' ? '[object]' : criterion.value.toString());
+            }
+        }
+        else {
+            record.valueId = criterion.toString();
+        }
+    }
+
+    if (node &amp;&amp; node.$id) {
+        record.filterId = node.$id;
+    }
+
+    applied.push(record);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.confidence.Store.prototype" id="apidoc.module.confidence.Store.prototype">module confidence.Store.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.Store.prototype._get" id="apidoc.element.confidence.Store.prototype._get">
+        function <span class="apidocSignatureSpan">confidence.Store.prototype.</span>_get
+        <span class="apidocSignatureSpan">(key, criteria, applied)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_get = function (key, criteria, applied) {
+
+    const self = this;
+
+    criteria = criteria || {};
+
+    const path = [];
+    if (key !== '/') {
+        const invalid = key.replace(/\/(\w+)/g, ($0, $1) =&gt; {
+
+            path.push($1);
+            return '';
+        });
+
+        if (invalid) {
+            return undefined;
+        }
+    }
+
+    let node = internals.filter(self._tree, criteria, applied);
+    for (let i = 0; i &lt; path.length &amp;&amp; node; ++i) {
+        if (typeof node !== 'object') {
+            node = undefined;
+            break;
+        }
+
+        node = internals.filter(node[path[i]], criteria, applied);
+    }
+
+    return node;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.Store.prototype.get" id="apidoc.element.confidence.Store.prototype.get">
+        function <span class="apidocSignatureSpan">confidence.Store.prototype.</span>get
+        <span class="apidocSignatureSpan">(key, criteria, applied)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (key, criteria, applied) {
+
+    const node = this._get(key, criteria, applied);
+    return internals.walk(node, criteria, applied);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        $default: 50
+    }
+};
+
+store.load(document);
+```
+
+### store.<span class="apidocCodeKeywordSpan">get</span>(key, [criteria])
+
+Retrieves a value from the configuration document after applying the provided criteria where:
+
+- `key` - the requested key path. All keys must begin with '/'. '/' returns the the entire document.
+- `criteria` - optional object used as criteria for applying filters in the configuration document. Defaults to `{}`.
+
+Returns the value found after applying the criteria. If the key is invalid or not found, returns undefined.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.Store.prototype.load" id="apidoc.element.confidence.Store.prototype.load">
+        function <span class="apidocSignatureSpan">confidence.Store.prototype.</span>load
+        <span class="apidocSignatureSpan">(document)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (document) {
+
+    const err = internals.Store.validate(document);
+    Hoek.assert(!err, err);
+
+    this._tree = Hoek.clone(document);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var Confidence = require('confidence');
+
+var store = new Confidence.Store();
+```
+
+### store.<span class="apidocCodeKeywordSpan">load</span>(document)
+
+Validates the provided configuration, clears any existing configuration, then loads the configuration where:
+
+- `document` - an object containing a **confidence** configuration object generated from a parsed JSON document.
+  If the document is invlaid, will throw an error.
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.Store.prototype.meta" id="apidoc.element.confidence.Store.prototype.meta">
+        function <span class="apidocSignatureSpan">confidence.Store.prototype.</span>meta
+        <span class="apidocSignatureSpan">(key, criteria)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">meta = function (key, criteria) {
+
+    const node = this._get(key, criteria);
+    return (typeof node === 'object' ? node.$meta : undefined);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Returns the value found after applying the criteria. If the key is invalid or not found, returns undefined.
+
+```javascript
+var value = store.get('/c', { size: 'big' });
+```
+
+### store.<span class="apidocCodeKeywordSpan">meta</span>(key, [criteria])
+
+Retrieves the metadata (if any) from the configuration document after applying the provided criteria where:
+
+- `key` - the requested key path. All keys must begin with '/'. '/' returns the the entire document.
+- `criteria` - optional object used as criteria for applying filters in the configuration document. Defaults to `{}`.
+
+Returns the metadata found after applying the criteria. If the key is invalid or not found, or if no metadata is available, returns
+ undefined.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.confidence.Store.prototype._get" id="apidoc.module.confidence.Store.prototype._get">module confidence.Store.prototype._get</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.Store.prototype._get._get" id="apidoc.element.confidence.Store.prototype._get._get">
+        function <span class="apidocSignatureSpan">confidence.Store.prototype.</span>_get
+        <span class="apidocSignatureSpan">(key, criteria, applied)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_get = function (key, criteria, applied) {
+
+    const self = this;
+
+    criteria = criteria || {};
+
+    const path = [];
+    if (key !== '/') {
+        const invalid = key.replace(/\/(\w+)/g, ($0, $1) =&gt; {
+
+            path.push($1);
+            return '';
+        });
+
+        if (invalid) {
+            return undefined;
+        }
+    }
+
+    let node = internals.filter(self._tree, criteria, applied);
+    for (let i = 0; i &lt; path.length &amp;&amp; node; ++i) {
+        if (typeof node !== 'object') {
+            node = undefined;
+            break;
+        }
+
+        node = internals.filter(node[path[i]], criteria, applied);
+    }
+
+    return node;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.confidence.Store.prototype.get" id="apidoc.module.confidence.Store.prototype.get">module confidence.Store.prototype.get</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.Store.prototype.get.get" id="apidoc.element.confidence.Store.prototype.get.get">
+        function <span class="apidocSignatureSpan">confidence.Store.prototype.</span>get
+        <span class="apidocSignatureSpan">(key, criteria, applied)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (key, criteria, applied) {
+
+    const node = this._get(key, criteria, applied);
+    return internals.walk(node, criteria, applied);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        $default: 50
+    }
+};
+
+store.load(document);
+```
+
+### store.<span class="apidocCodeKeywordSpan">get</span>(key, [criteria])
+
+Retrieves a value from the configuration document after applying the provided criteria where:
+
+- `key` - the requested key path. All keys must begin with '/'. '/' returns the the entire document.
+- `criteria` - optional object used as criteria for applying filters in the configuration document. Defaults to `{}`.
+
+Returns the value found after applying the criteria. If the key is invalid or not found, returns undefined.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.confidence.Store.prototype.load" id="apidoc.module.confidence.Store.prototype.load">module confidence.Store.prototype.load</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.Store.prototype.load.load" id="apidoc.element.confidence.Store.prototype.load.load">
+        function <span class="apidocSignatureSpan">confidence.Store.prototype.</span>load
+        <span class="apidocSignatureSpan">(document)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (document) {
+
+    const err = internals.Store.validate(document);
+    Hoek.assert(!err, err);
+
+    this._tree = Hoek.clone(document);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var Confidence = require('confidence');
+
+var store = new Confidence.Store();
+```
+
+### store.<span class="apidocCodeKeywordSpan">load</span>(document)
+
+Validates the provided configuration, clears any existing configuration, then loads the configuration where:
+
+- `document` - an object containing a **confidence** configuration object generated from a parsed JSON document.
+  If the document is invlaid, will throw an error.
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.confidence.Store.prototype.meta" id="apidoc.module.confidence.Store.prototype.meta">module confidence.Store.prototype.meta</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.Store.prototype.meta.meta" id="apidoc.element.confidence.Store.prototype.meta.meta">
+        function <span class="apidocSignatureSpan">confidence.Store.prototype.</span>meta
+        <span class="apidocSignatureSpan">(key, criteria)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">meta = function (key, criteria) {
+
+    const node = this._get(key, criteria);
+    return (typeof node === 'object' ? node.$meta : undefined);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Returns the value found after applying the criteria. If the key is invalid or not found, returns undefined.
+
+```javascript
+var value = store.get('/c', { size: 'big' });
+```
+
+### store.<span class="apidocCodeKeywordSpan">meta</span>(key, [criteria])
+
+Retrieves the metadata (if any) from the configuration document after applying the provided criteria where:
+
+- `key` - the requested key path. All keys must begin with '/'. '/' returns the the entire document.
+- `criteria` - optional object used as criteria for applying filters in the configuration document. Defaults to `{}`.
+
+Returns the metadata found after applying the criteria. If the key is invalid or not found, or if no metadata is available, returns
+ undefined.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.confidence.Store.validate" id="apidoc.module.confidence.Store.validate">module confidence.Store.validate</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.Store.validate.validate" id="apidoc.element.confidence.Store.validate.validate">
+        function <span class="apidocSignatureSpan">confidence.Store.</span>validate
+        <span class="apidocSignatureSpan">(node, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validate = function (node, path) {
+
+    path = path || '';
+
+    const error = function (reason) {
+
+        const e = Boom.badRequest(reason);
+        e.path = path || '/';
+        return e;
+    };
+
+    // Valid value
+
+    if (node === null ||
+        node === undefined ||
+        typeof node !== 'object') {
+        return null;
+    }
+
+    // Invalid object
+
+    if (node instanceof Error ||
+        node instanceof Date ||
+        node instanceof RegExp) {
+
+        return error('Invalid node object type');
+    }
+
+    // Invalid keys
+
+    const found = {};
+    const keys = Object.keys(node);
+    for (let i = 0; i &lt; keys.length; ++i) {
+        const key = keys[i];
+        if (key[0] === '$') {
+            if (key === '$filter') {
+                found.filter = true;
+                const filter = node[key];
+                if (!filter) {
+                    return error('Invalid empty filter value');
+                }
+
+                if (typeof filter !== 'string') {
+                    return error('Filter value must be a string');
+                }
+
+                if (!filter.match(/^\w+(?:\.\w+)*$/)) {
+                    return error('Invalid filter value ' + node[key]);
+                }
+            }
+            else if (key === '$range') {
+                found.range = true;
+                if (node.$range instanceof Array === false) {
+                    return error('Range value must be an array');
+                }
+
+                if (!node.$range.length) {
+                    return error('Range must include at least one value');
+                }
+
+                let lastLimit = undefined;
+                for (let j = 0; j &lt; node.$range.length; ++j) {
+                    const range = node.$range[j];
+                    if (typeof range !== 'object') {
+                        return error('Invalid range entry type');
+                    }
+
+                    if (!Object.prototype.hasOwnProperty.call(range, 'limit')) {
+                        return error('Range entry missing limit');
+                    }
+
+                    if (typeof range.limit !== 'number') {
+                        return error('Range limit must be a number');
+                    }
+
+                    if (lastLimit !== undefined &amp;&amp; range.limit &lt;= lastLimit) {
+                        return error('Range entries not sorted in ascending order - ' + range.limit + ' cannot come after ' + lastLimit
+);
+                    }
+
+                    lastLimit = range.limit;
+
+                    if (!Object.prototype.hasOwnProperty.call(range, 'value')) {
+                        return error('Range entry missing value');
+                    }
+
+                    const err = internals.Store.validate(range.value, path + '/$range[' + range.limit + ']');
+                    if (err) {
+                        return err;
+                    }
+                }
+            }
+            else if (key === '$default') {
+                found.default = true;
+                const err2 = internals.Store.validate(node.$default, path + '/$default');
+                if (err2) {
+                    return err2;
+                }
+            }
+            else if (key === '$base') {
+                found.base = true;
+            }
+            else if (key === '$meta') {
+                found.meta = true;
+            }
+            else if (key === '$id') {
+                if (!node.$id ||
+                    typeof node.$id !== 'string') {
+
+                    return error('Id value must be a non-empty string');
+                }
+
+                found.id = true;
+            }
+            else if (key === '$value') {
+                found.value = true;
+                const err3 = internals.Store.validate(node.$value, path + '/$value');
+                if (err3) {
+                    return err3;
+                }
+            }
+            else {
+                return error('Unknown $ directive ' + key);
+            }
+        }
+        else {
+            found.key = true;
+            const value = node[key];
+            const err4 = internals.Store.validate(value, path + '/ ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.confidence.id" id="apidoc.module.confidence.id">module confidence.id</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.id.criteria" id="apidoc.element.confidence.id.criteria">
+        function <span class="apidocSignatureSpan">confidence.id.</span>criteria
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">criteria = function (id) {
+
+    if (!id.match(/^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$/)) {
+        return null;
+    }
+
+    const parse = function (from, to) {
+
+        const hex = id.slice(from, to);
+        const value = parseInt(hex, 16);
+
+        if (value &gt;= 10000000) {
+            return null;
+        }
+
+        const set = value.toString().split('');
+        for (let i = 0; i &lt; set.length; ++i) {
+            set[i] = parseInt(set[i], 10);
+        }
+
+        for (let i = 0; i &lt; 7 - set.length; ++i) {
+            set.unshift(0);
+        }
+
+        return set;
+    };
+
+    const set1 = parse(24, 30);
+    const set2 = parse(30);
+
+    if (set1 === null ||
+        set2 === null) {
+
+        return null;
+    }
+
+    const criteria = {
+        $id: id,
+        random: {
+            a: (set1[0] * 10) + set1[1] + 1,
+            b: (set1[1] * 10) + set1[2] + 1,
+            c: (set1[2] * 10) + set1[3] + 1,
+            d: (set1[3] * 10) + set1[4] + 1,
+            e: (set1[4] * 10) + set1[5] + 1,
+            f: (set1[5] * 10) + set1[6] + 1,
+            g: (set1[6] * 10) + set2[0] + 1,
+            h: (set2[0] * 10) + set2[1] + 1,
+            i: (set2[1] * 10) + set2[2] + 1,
+            j: (set2[2] * 10) + set2[3] + 1,
+            k: (set2[3] * 10) + set2[4] + 1,
+            l: (set2[4] * 10) + set2[5] + 1,
+            m: (set2[5] * 10) + set2[6] + 1,
+            n: (set2[6] * 10) + set1[0] + 1
+        }
+    };
+
+    return criteria;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.id.generate" id="apidoc.element.confidence.id.generate">
+        function <span class="apidocSignatureSpan">confidence.id.</span>generate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">generate = function () {
+
+    let rand = Crypto.randomBytes(10);
+
+    rand[6] = (rand[6] &amp; 0x0f) | 0x40;        // Per RFC 4122 (4.4) - set bits for version and `clock_seq_hi_and_reserved`
+    rand[8] = (rand[8] &amp; 0x3f) | 0x80;
+
+    const b = internals.byteToHex;
+    let id = b[rand[0]] + b[rand[1]] + b[rand[2]] + b[rand[3]] + '-' +
+            b[rand[4]] + b[rand[5]] + '-' +
+            b[rand[6]] + b[rand[7]] + '-' +
+            b[rand[8]] + b[rand[9]] + '-';
+
+    const distributedRandom3B = function () {
+
+        let bytes = '';
+
+        while (!bytes) {                            // This can theoretically loop forever if the machine random device generates
+ garbage
+            rand = Crypto.randomBytes(3);
+            const value = (rand[0] &lt;&lt; 16) | (rand[1] &lt;&lt; 8) | rand[2];
+            if (value &gt;= 10000000) {
+                continue;
+            }
+
+            bytes = internals.byteToHex[rand[0]] + internals.byteToHex[rand[1]] + internals.byteToHex[rand[2]];
+        }
+
+        return bytes;
+    };
+
+    id += distributedRandom3B();
+    id += distributedRandom3B();
+
+    return id;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.confidence.id.criteria" id="apidoc.module.confidence.id.criteria">module confidence.id.criteria</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.id.criteria.criteria" id="apidoc.element.confidence.id.criteria.criteria">
+        function <span class="apidocSignatureSpan">confidence.id.</span>criteria
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">criteria = function (id) {
+
+    if (!id.match(/^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$/)) {
+        return null;
+    }
+
+    const parse = function (from, to) {
+
+        const hex = id.slice(from, to);
+        const value = parseInt(hex, 16);
+
+        if (value &gt;= 10000000) {
+            return null;
+        }
+
+        const set = value.toString().split('');
+        for (let i = 0; i &lt; set.length; ++i) {
+            set[i] = parseInt(set[i], 10);
+        }
+
+        for (let i = 0; i &lt; 7 - set.length; ++i) {
+            set.unshift(0);
+        }
+
+        return set;
+    };
+
+    const set1 = parse(24, 30);
+    const set2 = parse(30);
+
+    if (set1 === null ||
+        set2 === null) {
+
+        return null;
+    }
+
+    const criteria = {
+        $id: id,
+        random: {
+            a: (set1[0] * 10) + set1[1] + 1,
+            b: (set1[1] * 10) + set1[2] + 1,
+            c: (set1[2] * 10) + set1[3] + 1,
+            d: (set1[3] * 10) + set1[4] + 1,
+            e: (set1[4] * 10) + set1[5] + 1,
+            f: (set1[5] * 10) + set1[6] + 1,
+            g: (set1[6] * 10) + set2[0] + 1,
+            h: (set2[0] * 10) + set2[1] + 1,
+            i: (set2[1] * 10) + set2[2] + 1,
+            j: (set2[2] * 10) + set2[3] + 1,
+            k: (set2[3] * 10) + set2[4] + 1,
+            l: (set2[4] * 10) + set2[5] + 1,
+            m: (set2[5] * 10) + set2[6] + 1,
+            n: (set2[6] * 10) + set1[0] + 1
+        }
+    };
+
+    return criteria;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.confidence.id.generate" id="apidoc.module.confidence.id.generate">module confidence.id.generate</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.confidence.id.generate.generate" id="apidoc.element.confidence.id.generate.generate">
+        function <span class="apidocSignatureSpan">confidence.id.</span>generate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">generate = function () {
+
+    let rand = Crypto.randomBytes(10);
+
+    rand[6] = (rand[6] &amp; 0x0f) | 0x40;        // Per RFC 4122 (4.4) - set bits for version and `clock_seq_hi_and_reserved`
+    rand[8] = (rand[8] &amp; 0x3f) | 0x80;
+
+    const b = internals.byteToHex;
+    let id = b[rand[0]] + b[rand[1]] + b[rand[2]] + b[rand[3]] + '-' +
+            b[rand[4]] + b[rand[5]] + '-' +
+            b[rand[6]] + b[rand[7]] + '-' +
+            b[rand[8]] + b[rand[9]] + '-';
+
+    const distributedRandom3B = function () {
+
+        let bytes = '';
+
+        while (!bytes) {                            // This can theoretically loop forever if the machine random device generates
+ garbage
+            rand = Crypto.randomBytes(3);
+            const value = (rand[0] &lt;&lt; 16) | (rand[1] &lt;&lt; 8) | rand[2];
+            if (value &gt;= 10000000) {
+                continue;
+            }
+
+            bytes = internals.byteToHex[rand[0]] + internals.byteToHex[rand[1]] + internals.byteToHex[rand[2]];
+        }
+
+        return bytes;
+    };
+
+    id += distributedRandom3B();
+    id += distributedRandom3B();
+
+    return id;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
