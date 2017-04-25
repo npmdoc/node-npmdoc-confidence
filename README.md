@@ -1,4 +1,7 @@
-# api documentation for  [confidence (v3.0.2)](https://github.com/hapijs/confidence#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-confidence.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-confidence) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-confidence.svg)](https://travis-ci.org/npmdoc/node-npmdoc-confidence)
+# npmdoc-confidence
+
+#### basic api documentation for  [confidence (v3.0.2)](https://github.com/hapijs/confidence#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-confidence.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-confidence) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-confidence.svg)](https://travis-ci.org/npmdoc/node-npmdoc-confidence)
+
 #### Configuration API
 
 [![NPM](https://nodei.co/npm/confidence.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/confidence)
